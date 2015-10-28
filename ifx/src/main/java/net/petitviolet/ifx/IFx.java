@@ -1,5 +1,7 @@
 package net.petitviolet.ifx;
 
+import net.petitviolet.ifx.func.Action;
+
 /**
  * A result = IFx.of(condition).apply(x)//.get()
  * .elseIf(condition2).apply(y)//.get()
@@ -37,6 +39,14 @@ public class IFx<A> {
         return this;
     }
 
+    public IFx<A> apply(Action<A> result) {
+        if (!mIsDefined && mIsTrue) {
+            mValue = result.run();
+            mIsDefined = true;
+        }
+        return this;
+    }
+
     public A get() {
         return mIsDefined && mIsTrue ? mValue : null;
     }
@@ -51,5 +61,8 @@ public class IFx<A> {
 
     public A Else(A result) {
         return mIsDefined ? mValue : result;
+    }
+    public A Else(Action<A> result) {
+        return mIsDefined ? mValue : result.run();
     }
 }
