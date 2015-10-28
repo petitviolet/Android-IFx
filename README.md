@@ -1,10 +1,29 @@
 # Android-IFx
 
+![jitpack](https://img.shields.io/github/tag/petitviolet/Android-IFx.svg?label=JitPack)
+
 This library for Android provides `if-expression` like Scala.  
 `IFx` enabled Java if-statement to return value.  
 Strongly inspired by [jshosomichi/ifx](https://github.com/jshosomichi/ifx).  
 
 # How to Use
+
+## Set up
+
+```groovy
+repositories {
+    // ...
+    maven { url "https://jitpack.io" }
+}
+
+// ...
+
+dependencies {
+    compile 'com.github.petitviolet:Android-IFx:0.0.1'
+}
+```
+
+## Interface
 
 ```java
 /** returns primitive value pattern **/
@@ -16,7 +35,8 @@ assert result == "bar";
 
 // if ~ else if ~
 String result2 = IFx.<String>of(true).apply("hoge")
-                .ElseIf(false).apply("foo").get();
+        .ElseIf(false).apply("foo")
+        .get();
 assert result2 == "hoge";
 
 // not matched 
