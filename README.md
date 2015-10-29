@@ -58,11 +58,22 @@ String result4 = IFx.<String>of(false).apply(new Action<String>() {
 }).Else(new Action<String>() {
     @Override
     public String run() {
+        Log.d(TAG, "in else condition!");
         return "bar";
     }
 });
 
 assert result4 == "foo";
+
+// with lambda expression
+String result5 = IFx.<String>of(false).apply(() -> "hoge")
+    .ElseIf(true).apply(() -> "foo")
+    .Else(() -> {
+        Log.d(TAG, "in else condition!");
+        return "bar";
+    });
+
+assert result5 == "foo";
 ```
 
 # Lisence
