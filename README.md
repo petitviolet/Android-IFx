@@ -1,6 +1,6 @@
 # Android-IFx
 
-![jitpack](https://img.shields.io/github/tag/petitviolet/Android-IFx.svg?label=JitPack)
+[![Download](https://api.bintray.com/packages/petitviolet/maven/android-ifx/images/download.svg) ](https://bintray.com/petitviolet/maven/android-ifx/\_latestVersion)
 
 This library for Android provides `if-expression` like Scala.  
 `IFx` enabled Java if-statement to return value.  
@@ -13,13 +13,13 @@ Strongly inspired by [jshosomichi/ifx](https://github.com/jshosomichi/ifx).
 ```groovy
 repositories {
     // ...
-    maven { url "https://jitpack.io" }
+    jcenter()
 }
 
 // ...
 
 dependencies {
-    compile 'com.github.petitviolet:Android-IFx:0.0.1'
+    compile 'net.petitviolet.android:ifx:0.1.0'
 }
 ```
 
