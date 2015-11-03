@@ -33,8 +33,8 @@ def gitUrl = 'https://github.com/petitviolet/android-ifx.git'
 
 
 bintray {
-    user = bintray_user
-    key = bintray_api_key
+    user = rootProject.ext.BINTRAY_USER
+    key = rootProject.ext.BINTRAY_API_KEY
 
     configurations = ['archives'] //When uploading configuration files
     pkg {
