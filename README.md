@@ -12,15 +12,8 @@ Strongly inspired by [jshosomichi/ifx](https://github.com/jshosomichi/ifx).
 ## Set up
 
 ```groovy
-repositories {
-    // ...
-    jcenter()
-}
-
-// ...
-
 dependencies {
-    compile 'net.petitviolet.android:ifx:0.1.0'
+    compile 'net.petitviolet.android:ifx:0.2.0'
 }
 ```
 
