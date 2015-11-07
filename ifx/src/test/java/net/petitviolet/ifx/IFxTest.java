@@ -12,30 +12,30 @@ import static org.junit.Assert.*;
 public class IFxTest {
     @Test
     public void ifxTestFail() throws Exception {
-        String result = IFx.<String>of(false).apply("hoge")
-                .ElseIf(false).apply("foo").get();
+        String result = IFx.<String>of(false).then("hoge")
+                .ElseIf(false).then("foo").get();
 
         assert result == null;
     }
     @Test
     public void ifxTestGet1() throws Exception {
-        String result = IFx.<String>of(true).apply("hoge")
-                .ElseIf(false).apply("foo").get();
+        String result = IFx.<String>of(true).then("hoge")
+                .ElseIf(false).then("foo").get();
 
         assert result == "hoge";
     }
 
     @Test
     public void ifxTestGet2() throws Exception {
-        String result = IFx.<String>of(false).apply("hoge")
-                .ElseIf(true).apply("foo").get();
+        String result = IFx.<String>of(false).then("hoge")
+                .ElseIf(true).then("foo").get();
 
         assert result == "foo";
     }
     @Test
     public void ifxTest1() throws Exception {
-        String result = IFx.<String>of(true).apply("hoge")
-                .ElseIf(false).apply("foo")
+        String result = IFx.<String>of(true).then("hoge")
+                .ElseIf(false).then("foo")
                 .Else("bar");
 
         assert result == "hoge";
@@ -43,8 +43,8 @@ public class IFxTest {
 
     @Test
     public void ifxTest2() throws Exception {
-        String result = IFx.<String>of(false).apply("hoge")
-                .ElseIf(true).apply("foo")
+        String result = IFx.<String>of(false).then("hoge")
+                .ElseIf(true).then("foo")
                 .Else("bar");
 
         assert result == "foo";
@@ -52,8 +52,8 @@ public class IFxTest {
 
     @Test
     public void ifxTest3() throws Exception {
-        String result = IFx.<String>of(false).apply("hoge")
-                .ElseIf(false).apply("foo")
+        String result = IFx.<String>of(false).then("hoge")
+                .ElseIf(false).then("foo")
                 .Else("bar");
 
         assert result == "bar";
@@ -61,12 +61,12 @@ public class IFxTest {
 
     @Test
     public void ifxTest1x() throws Exception {
-        String result = IFx.<String>of(true).apply(new Action<String>() {
+        String result = IFx.<String>of(true).then(new Action<String>() {
             @Override
             public String run() {
                 return "hoge";
             }
-        }).ElseIf(false).apply(new Action<String>() {
+        }).ElseIf(false).then(new Action<String>() {
             @Override
             public String run() {
                 return "foo";
@@ -83,12 +83,12 @@ public class IFxTest {
 
     @Test
     public void ifxTest2x() throws Exception {
-        String result = IFx.<String>of(false).apply(new Action<String>() {
+        String result = IFx.<String>of(false).then(new Action<String>() {
             @Override
             public String run() {
                 return "hoge";
             }
-        }).ElseIf(true).apply(new Action<String>() {
+        }).ElseIf(true).then(new Action<String>() {
             @Override
             public String run() {
                 return "foo";
@@ -105,12 +105,12 @@ public class IFxTest {
 
     @Test
     public void ifxTest3x() throws Exception {
-        String result = IFx.<String>of(false).apply(new Action<String>() {
+        String result = IFx.<String>of(false).then(new Action<String>() {
             @Override
             public String run() {
                 return "hoge";
             }
-        }).ElseIf(false).apply(new Action<String>() {
+        }).ElseIf(false).then(new Action<String>() {
             @Override
             public String run() {
                 return "foo";

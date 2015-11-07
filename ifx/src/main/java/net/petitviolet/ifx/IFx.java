@@ -3,8 +3,8 @@ package net.petitviolet.ifx;
 import net.petitviolet.ifx.func.Action;
 
 /**
- * A result = IFx.of(condition).apply(x)//.get()
- * .elseIf(condition2).apply(y)//.get()
+ * A result = IFx.of(condition).then(x)//.get()
+ * .elseIf(condition2).then(y)//.get()
  * .else(z)
  * @param <A>
  */
@@ -31,7 +31,7 @@ public class IFx<A> {
         return new IFx<>(isTrue);
     }
 
-    public IFx<A> apply(A result) {
+    public IFx<A> then(A result) {
         if (!mIsDefined && mIsTrue) {
             mValue = result;
             mIsDefined = true;
@@ -39,7 +39,7 @@ public class IFx<A> {
         return this;
     }
 
-    public IFx<A> apply(Action<A> result) {
+    public IFx<A> then(Action<A> result) {
         if (!mIsDefined && mIsTrue) {
             mValue = result.run();
             mIsDefined = true;
