@@ -14,7 +14,7 @@ Strongly inspired by [jshosomichi/ifx](https://github.com/jshosomichi/ifx).
 
 ```groovy
 dependencies {
-    compile 'net.petitviolet.android:ifx:0.2.0'
+    compile 'net.petitviolet.android:ifx:latest-version'
 }
 ```
 
