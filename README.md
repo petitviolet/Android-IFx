@@ -1,8 +1,11 @@
 # Android-IFx
 
 [![Circle CI](https://circleci.com/gh/petitviolet/Android-IFx.svg?style=svg)](https://circleci.com/gh/petitviolet/Android-IFx)
-[![Download](https://api.bintray.com/packages/petitviolet/maven/android-ifx/images/download.svg) ](https://bintray.com/petitviolet/maven/android-ifx/\_latestVersion) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android--IFx-green.svg?style=flat)](https://android-arsenal.com/details/1/2703)
+[![Download](https://api.bintray.com/packages/petitviolet/maven/android-ifx/images/download.svg) ](https://bintray.com/petitviolet/maven/android-ifx/\_latestVersion)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android--IFx-green.svg?style=flat)](https://android-arsenal.com/details/1/2703)
 
+This library is deprecated.
+I recommend use [petitviolet/Android-scaex](https://github.com/petitviolet/Android-scaex) instead.
 
 This library for Android provides `if-expression` like Scala.  
 `IFx` enabled Java if-statement to return value.  
